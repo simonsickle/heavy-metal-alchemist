@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://ohf61dvgfgl3"]
+
+[ext_resource type="PackedScene" uid="uid://bjcko5xpy41xs" path="res://library/item_slot_ui.tscn" id="1_465dv"]
+[ext_resource type="Script" path="res://crafting_screen.gd" id="1_rwenr"]
+[ext_resource type="PackedScene" uid="uid://pt2qtqluawnl" path="res://library/catalog_ui.tscn" id="1_wnuwp"]
+[ext_resource type="FontFile" uid="uid://c1vwfyoxivvfi" path="res://art/joystix monospace.otf" id="3_dyh8x"]
+
+[node name="CraftingScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.989597)
+script = ExtResource("1_rwenr")
+
+[node name="FirstItem" parent="." instance=ExtResource("1_465dv")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 258.0
+offset_top = 85.0
+offset_right = 322.0
+offset_bottom = 162.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="SecondItem" parent="." instance=ExtResource("1_465dv")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 378.0
+offset_top = 85.0
+offset_right = 442.0
+offset_bottom = 162.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Catalog" parent="." instance=ExtResource("1_wnuwp")]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -458.0
+offset_top = -323.5
+offset_right = 0.0
+offset_bottom = 323.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="CombineButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 305.0
+offset_top = 226.355
+offset_right = 406.0
+offset_bottom = 254.355
+theme_override_fonts/font = ExtResource("3_dyh8x")
+text = "Combine"

@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://pt2qtqluawnl"]
+
+[ext_resource type="Texture2D" uid="uid://s7di4olomxt8" path="res://art/ItemCatalogBackground.png" id="1_6te34"]
+[ext_resource type="Script" path="res://library/catalog_ui.gd" id="1_h4cvh"]
+[ext_resource type="FontFile" uid="uid://c1vwfyoxivvfi" path="res://art/joystix monospace.otf" id="3_3fg3v"]
+
+[node name="CatalogUi" type="NinePatchRect"]
+offset_right = 458.0
+offset_bottom = 647.0
+texture = ExtResource("1_6te34")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+script = ExtResource("1_h4cvh")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -75.0
+offset_top = 39.0
+offset_right = 76.0
+offset_bottom = 60.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0.363803, 0.370223, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_3fg3v")
+theme_override_font_sizes/normal_font_size = 16
+text = "Ingredients"
+fit_content = true
+scroll_active = false
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -169.0
+offset_top = -246.0
+offset_right = 169.0
+offset_bottom = 246.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer"]
+layout_mode = 2
+columns = 5

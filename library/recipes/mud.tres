@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=5 format=3 uid="uid://cjd5q5oyvyod5"]
+
+[ext_resource type="Script" path="res://library/recipe.gd" id="1_cdbjg"]
+[ext_resource type="Resource" uid="uid://dvhktywxjvi8u" path="res://library/items/mud.tres" id="1_m048q"]
+[ext_resource type="Resource" uid="uid://b4j7e2r2rt32n" path="res://library/items/dirt.tres" id="2_nw43n"]
+[ext_resource type="Resource" uid="uid://ckbwf3tyoa61l" path="res://library/items/water.tres" id="4_xphj1"]
+
+[resource]
+script = ExtResource("1_cdbjg")
+first_ingredient = ExtResource("2_nw43n")
+second_ingredient = ExtResource("4_xphj1")
+creates = ExtResource("1_m048q")
