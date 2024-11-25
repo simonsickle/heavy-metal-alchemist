@@ -55,9 +55,9 @@ grow_vertical = 2
 
 [node name="CombineButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 305.0
-offset_top = 226.355
-offset_right = 406.0
-offset_bottom = 254.355
+offset_left = 300.0
+offset_top = 231.407
+offset_right = 401.0
+offset_bottom = 259.407
 theme_override_fonts/font = ExtResource("3_dyh8x")
 text = "Combine"
