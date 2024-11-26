@@ -17,8 +17,6 @@ func _on_catalog_item_select(item: Item) -> void:
 		first_item.item = item
 	elif second_item.item == null:
 		second_item.item = item
-	else:
-		print("Shitter's full")
 
 	## Show the combine button if both recipe items are full
 	if first_item.item != null && second_item.item != null:

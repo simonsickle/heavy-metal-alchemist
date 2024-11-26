@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://c828hht1y4jn4"]
+
+[ext_resource type="Script" path="res://addons/recipebuilder/components/files_list.gd" id="1_408p6"]
+
+[node name="FilesList" type="VBoxContainer"]
+clip_contents = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_408p6")
+
+[node name="FilterEdit" type="LineEdit" parent="."]
+layout_mode = 2
+placeholder_text = "Filter files"
+clear_button_enabled = true
+
+[node name="List" type="ItemList" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+allow_rmb_select = true

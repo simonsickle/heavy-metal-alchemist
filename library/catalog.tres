@@ -1,0 +1,202 @@
+[gd_resource type="Resource" script_class="GraphData" load_steps=41 format=3 uid="uid://dnsjq20hbyb2n"]
+
+[ext_resource type="Script" path="res://addons/recipebuilder/components/graph/node_data.gd" id="1_4d3bb"]
+[ext_resource type="Texture2D" uid="uid://b6exm36lkqkql" path="res://art/items/Dirt.png" id="2_0p1l8"]
+[ext_resource type="Script" path="res://addons/recipebuilder/resources/CraftingItem.gd" id="2_mobtw"]
+[ext_resource type="Script" path="res://addons/recipebuilder/resources/CraftingRecipe.gd" id="3_x83ys"]
+[ext_resource type="Script" path="res://addons/recipebuilder/resources/CraftingCatalog.gd" id="4_64064"]
+[ext_resource type="Script" path="res://addons/recipebuilder/components/graph/graph_data.gd" id="4_y3pun"]
+
+[sub_resource type="Resource" id="Resource_7jjag"]
+script = ExtResource("2_mobtw")
+label = "Fire"
+
+[sub_resource type="Resource" id="Resource_8cl87"]
+script = ExtResource("2_mobtw")
+label = "Water"
+
+[sub_resource type="Resource" id="Resource_y32xo"]
+script = ExtResource("2_mobtw")
+label = "Mud"
+
+[sub_resource type="Resource" id="Resource_oada5"]
+script = ExtResource("2_mobtw")
+label = "Dirt"
+icon = ExtResource("2_0p1l8")
+
+[sub_resource type="Resource" id="Resource_3oabc"]
+script = ExtResource("2_mobtw")
+label = "Air"
+
+[sub_resource type="Resource" id="Resource_jmbjr"]
+script = ExtResource("2_mobtw")
+label = "Brick"
+
+[sub_resource type="Resource" id="Resource_tr6ev"]
+script = ExtResource("2_mobtw")
+label = "Steam"
+
+[sub_resource type="Resource" id="Resource_nvvg0"]
+script = ExtResource("2_mobtw")
+label = "Dirt"
+icon = ExtResource("2_0p1l8")
+
+[sub_resource type="Resource" id="Resource_607q3"]
+script = ExtResource("2_mobtw")
+label = "Water"
+
+[sub_resource type="Resource" id="Resource_qauj2"]
+script = ExtResource("2_mobtw")
+label = "Mud"
+
+[sub_resource type="Resource" id="Resource_g8s7h"]
+script = ExtResource("3_x83ys")
+inputs = Array[ExtResource("2_mobtw")]([SubResource("Resource_nvvg0"), SubResource("Resource_607q3")])
+output = SubResource("Resource_qauj2")
+
+[sub_resource type="Resource" id="Resource_51w2p"]
+script = ExtResource("2_mobtw")
+label = "Water"
+
+[sub_resource type="Resource" id="Resource_r1nhq"]
+script = ExtResource("2_mobtw")
+label = "Fire"
+
+[sub_resource type="Resource" id="Resource_o6dq7"]
+script = ExtResource("2_mobtw")
+label = "Steam"
+
+[sub_resource type="Resource" id="Resource_87pki"]
+script = ExtResource("3_x83ys")
+inputs = Array[ExtResource("2_mobtw")]([SubResource("Resource_51w2p"), SubResource("Resource_r1nhq")])
+output = SubResource("Resource_o6dq7")
+
+[sub_resource type="Resource" id="Resource_ct63q"]
+script = ExtResource("2_mobtw")
+label = "Fire"
+
+[sub_resource type="Resource" id="Resource_wbf5f"]
+script = ExtResource("2_mobtw")
+label = "Dirt"
+icon = ExtResource("2_0p1l8")
+
+[sub_resource type="Resource" id="Resource_kma5x"]
+script = ExtResource("2_mobtw")
+label = "Brick"
+
+[sub_resource type="Resource" id="Resource_7n5eu"]
+script = ExtResource("3_x83ys")
+inputs = Array[ExtResource("2_mobtw")]([SubResource("Resource_ct63q"), SubResource("Resource_wbf5f")])
+output = SubResource("Resource_kma5x")
+
+[sub_resource type="Resource" id="Resource_lf3st"]
+script = ExtResource("4_64064")
+items = Array[ExtResource("2_mobtw")]([SubResource("Resource_7jjag"), SubResource("Resource_8cl87"), SubResource("Resource_y32xo"), SubResource("Resource_oada5"), SubResource("Resource_3oabc"), SubResource("Resource_jmbjr"), SubResource("Resource_tr6ev")])
+recipes = Array[ExtResource("3_x83ys")]([SubResource("Resource_g8s7h"), SubResource("Resource_87pki"), SubResource("Resource_7n5eu")])
+
+[sub_resource type="Resource" id="Resource_rkja5"]
+script = ExtResource("2_mobtw")
+label = "Fire"
+
+[sub_resource type="Resource" id="Resource_s4ivf"]
+script = ExtResource("1_4d3bb")
+name = "_GraphNode_420617"
+offset = Vector2(80, 1060)
+element = SubResource("Resource_rkja5")
+
+[sub_resource type="Resource" id="Resource_o607r"]
+script = ExtResource("2_mobtw")
+label = "Water"
+
+[sub_resource type="Resource" id="Resource_in53s"]
+script = ExtResource("1_4d3bb")
+name = "_GraphNode_420605"
+offset = Vector2(80, 680)
+element = SubResource("Resource_o607r")
+
+[sub_resource type="Resource" id="Resource_tg2op"]
+script = ExtResource("2_mobtw")
+label = "Mud"
+
+[sub_resource type="Resource" id="Resource_ohufl"]
+script = ExtResource("1_4d3bb")
+name = "_GraphNode_420631"
+offset = Vector2(560, 640)
+element = SubResource("Resource_tg2op")
+
+[sub_resource type="Resource" id="Resource_bagdi"]
+script = ExtResource("2_mobtw")
+label = "Dirt"
+icon = ExtResource("2_0p1l8")
+
+[sub_resource type="Resource" id="Resource_s3k8s"]
+script = ExtResource("1_4d3bb")
+name = "ElementNode"
+offset = Vector2(80, 860)
+element = SubResource("Resource_bagdi")
+
+[sub_resource type="Resource" id="Resource_g6362"]
+script = ExtResource("2_mobtw")
+label = "Air"
+
+[sub_resource type="Resource" id="Resource_jl3o2"]
+script = ExtResource("1_4d3bb")
+name = "_GraphNode_420611"
+offset = Vector2(80, 500)
+element = SubResource("Resource_g6362")
+
+[sub_resource type="Resource" id="Resource_xyenb"]
+script = ExtResource("2_mobtw")
+label = "Brick"
+
+[sub_resource type="Resource" id="Resource_o5anf"]
+script = ExtResource("1_4d3bb")
+name = "ElementNode2"
+offset = Vector2(560, 1040)
+element = SubResource("Resource_xyenb")
+
+[sub_resource type="Resource" id="Resource_4udv6"]
+script = ExtResource("2_mobtw")
+label = "Steam"
+
+[sub_resource type="Resource" id="Resource_tkr5v"]
+script = ExtResource("1_4d3bb")
+name = "_GraphNode_420623"
+offset = Vector2(560, 820)
+element = SubResource("Resource_4udv6")
+
+[resource]
+script = ExtResource("4_y3pun")
+connections = Array[Dictionary]([{
+"from_node": "ElementNode",
+"from_port": 0,
+"to_node": "_GraphNode_420631",
+"to_port": 0
+}, {
+"from_node": "_GraphNode_420605",
+"from_port": 0,
+"to_node": "_GraphNode_420631",
+"to_port": 0
+}, {
+"from_node": "_GraphNode_420605",
+"from_port": 0,
+"to_node": "_GraphNode_420623",
+"to_port": 0
+}, {
+"from_node": "_GraphNode_420617",
+"from_port": 0,
+"to_node": "_GraphNode_420623",
+"to_port": 0
+}, {
+"from_node": "_GraphNode_420617",
+"from_port": 0,
+"to_node": "ElementNode2",
+"to_port": 0
+}, {
+"from_node": "ElementNode",
+"from_port": 0,
+"to_node": "ElementNode2",
+"to_port": 0
+}])
+nodes = Array[ExtResource("1_4d3bb")]([SubResource("Resource_s4ivf"), SubResource("Resource_in53s"), SubResource("Resource_ohufl"), SubResource("Resource_s3k8s"), SubResource("Resource_jl3o2"), SubResource("Resource_o5anf"), SubResource("Resource_tkr5v")])
+crafting_catalog = SubResource("Resource_lf3st")

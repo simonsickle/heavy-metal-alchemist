@@ -1,0 +1,93 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpbqdd58gd4l8"]
+
+[ext_resource type="Script" path="res://addons/recipebuilder/main_panel.gd" id="1_nyk28"]
+[ext_resource type="PackedScene" uid="uid://c828hht1y4jn4" path="res://addons/recipebuilder/components/files_list.tscn" id="2_qvwsx"]
+[ext_resource type="PackedScene" uid="uid://b8143gygg3o2b" path="res://addons/recipebuilder/components/graph/graph.tscn" id="3_ltbox"]
+
+[node name="Control" type="Control"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+script = ExtResource("1_nyk28")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
+size_flags_vertical = 3
+theme_override_constants/separation = 4
+
+[node name="MenuBar" type="MenuBar" parent="VBox"]
+layout_mode = 2
+
+[node name="File" type="PopupMenu" parent="VBox/MenuBar"]
+size = Vector2i(139, 170)
+item_count = 6
+item_0/text = "File"
+item_0/separator = true
+item_1/text = "New"
+item_1/id = 1
+item_2/text = "Save"
+item_2/id = 2
+item_3/text = "Load"
+item_3/id = 3
+item_4/text = "Graph"
+item_4/id = 4
+item_4/separator = true
+item_5/text = "Create Element"
+item_5/id = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBox"]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBox/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="FilesList" parent="VBox/HBoxContainer/VBoxContainer" instance=ExtResource("2_qvwsx")]
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AddElementBtn" type="Button" parent="VBox/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Create New Item"
+
+[node name="Graph" parent="VBox/HBoxContainer" instance=ExtResource("3_ltbox")]
+layout_mode = 2
+size_flags_horizontal = 3
+scroll_offset = Vector2(-146, -35)
+panning_scheme = 1
+right_disconnects = true
+
+[node name="OpenFileDialog" type="FileDialog" parent="."]
+title = "Open a File"
+initial_position = 2
+size = Vector2i(500, 400)
+ok_button_text = "Open"
+file_mode = 0
+
+[node name="SaveAsFileDialog" type="FileDialog" parent="."]
+auto_translate_mode = 1
+initial_position = 2
+size = Vector2i(500, 400)
+ok_button_text = "Save"
