@@ -47,7 +47,6 @@ func _on_cache_file_content_changed(path: String, new_content: String) -> void:
 
 
 func _on_graph_modified() -> void:
-	print("graph modified")
 	open_buffers[current_file_path] = {
 		resource = graph.save_data(),
 	}
@@ -121,6 +120,8 @@ func save_current_file() -> void:
 
 
 func _save_file(path: String, data: GraphData) -> void:
+	if not files_list.is_file_unsaved(path): return
+
 	if path == "":
 		save_file_dialog.popup_centered()
 		return

@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdjexm7hf6367"]
+
+[ext_resource type="Script" path="res://library/item_input_slot.gd" id="1_ppjdn"]
+[ext_resource type="Texture2D" uid="uid://deyf63e4atgel" path="res://art/ItemBackground.png" id="2_q0hso"]
+[ext_resource type="FontFile" uid="uid://c1vwfyoxivvfi" path="res://art/joystix monospace.otf" id="3_3gny4"]
+
+[node name="ItemInputSlot" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(64, 77)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1088.0
+offset_bottom = -571.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ppjdn")
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_q0hso")
+centered = false
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(4, 4)
+scale = Vector2(1.75, 1.75)
+centered = false
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_top = 64.0
+offset_right = 63.0
+offset_bottom = 74.0
+theme_override_fonts/font = ExtResource("3_3gny4")
+theme_override_font_sizes/font_size = 9
+horizontal_alignment = 1

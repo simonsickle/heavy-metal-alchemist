@@ -4,29 +4,41 @@ extends Control
 @onready var first_item := $FirstItem
 @onready var second_item := $SecondItem
 @onready var combine_button := $CombineButton
-
-var recipes := Recipes.new()
+@onready var progress_label := $ProgressLabel
 
 func _ready() -> void:
-	catalog.connect("on_catalog_item_click", _on_catalog_item_select)
-	combine_button.connect("pressed", _do_combine)
+	combine_button.pressed.connect(_do_combine)
 	combine_button.visible = false
+	progress_label.text = CatalogManager.progress_label()
+	CatalogManager.new_item_unlocked.connect(_on_new_item_unlocked)
 
-func _on_catalog_item_select(item: Item) -> void:
-	if first_item.item == null:
-		first_item.item = item
-	elif second_item.item == null:
-		second_item.item = item
 
-	## Show the combine button if both recipe items are full
-	if first_item.item != null && second_item.item != null:
-		combine_button.visible = true
+func _process(delta: float) -> void:
+	combine_button.visible = first_item.item and second_item.item
+
+func _on_new_item_unlocked(item: CraftingItemResource) -> void:
+	progress_label.text = CatalogManager.progress_label()
+	
+	ToastParty.show({
+		"text": "%s Unlocked!" % item.label,
+		"bgcolor": Color(0, 0, 0, 0.6),
+		"color": Color(1, 1, 1, 1),
+		"gravity": "bottom",
+		"direction": "center",
+	})
+
 
 func  _do_combine() -> void:
-	var created := recipes.does_recipe_match_any(first_item.item, second_item.item)
+	var unlocked = CatalogManager.check_recipe([first_item.item.label, second_item.item.label])
 	
-	if created != null:
-		catalog.unlock_item(created)
+	if not unlocked:
+		ToastParty.show({
+		"text": "Hmm... That didn't work.",
+		"bgcolor": Color(0, 0, 0, 0.6),
+		"color": Color(1, 1, 1, 1),
+		"gravity": "bottom",
+		"direction": "center",
+	})
 	
 	## Reset the entries
 	first_item.item = null

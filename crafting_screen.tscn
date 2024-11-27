@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://ohf61dvgfgl3"]
 
-[ext_resource type="PackedScene" uid="uid://bjcko5xpy41xs" path="res://library/item_slot_ui.tscn" id="1_465dv"]
 [ext_resource type="Script" path="res://crafting_screen.gd" id="1_rwenr"]
 [ext_resource type="PackedScene" uid="uid://pt2qtqluawnl" path="res://library/catalog_ui.tscn" id="1_wnuwp"]
 [ext_resource type="FontFile" uid="uid://c1vwfyoxivvfi" path="res://art/joystix monospace.otf" id="3_dyh8x"]
+[ext_resource type="PackedScene" uid="uid://cdjexm7hf6367" path="res://library/item_input_slot.tscn" id="4_0u4km"]
 
 [node name="CraftingScreen" type="Control"]
 layout_mode = 3
@@ -14,30 +14,6 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 0.989597)
 script = ExtResource("1_rwenr")
-
-[node name="FirstItem" parent="." instance=ExtResource("1_465dv")]
-layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 258.0
-offset_top = 85.0
-offset_right = 322.0
-offset_bottom = 162.0
-grow_horizontal = 1
-grow_vertical = 1
-
-[node name="SecondItem" parent="." instance=ExtResource("1_465dv")]
-layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 378.0
-offset_top = 85.0
-offset_right = 442.0
-offset_bottom = 162.0
-grow_horizontal = 1
-grow_vertical = 1
 
 [node name="Catalog" parent="." instance=ExtResource("1_wnuwp")]
 layout_mode = 1
@@ -55,9 +31,42 @@ grow_vertical = 2
 
 [node name="CombineButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 300.0
-offset_top = 231.407
-offset_right = 401.0
-offset_bottom = 259.407
+offset_left = 273.0
+offset_top = 337.0
+offset_right = 374.0
+offset_bottom = 365.0
 theme_override_fonts/font = ExtResource("3_dyh8x")
 text = "Combine"
+
+[node name="FirstItem" parent="." instance=ExtResource("4_0u4km")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 225.0
+offset_top = 225.0
+offset_right = 289.0
+offset_bottom = 302.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="SecondItem" parent="." instance=ExtResource("4_0u4km")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 353.0
+offset_top = 225.0
+offset_right = 417.0
+offset_bottom = 302.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="ProgressLabel" type="Label" parent="."]
+layout_mode = 1
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 215.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("3_dyh8x")
+text = "test"

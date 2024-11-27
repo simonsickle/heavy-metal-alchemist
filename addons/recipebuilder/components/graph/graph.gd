@@ -8,10 +8,10 @@ signal graph_modified
 var CraftingItemNodeResource := preload("res://addons/recipebuilder/components/graph/node/crafting_item_node.tscn")
 
 func _ready() -> void:
-	self.connect("connection_request", _on_connection_request)
-	self.connect("disconnection_request", _on_disconnect_request)
-	self.connect("delete_nodes_request", _on_delete_node_request)
-	self.connect("end_node_move", _on_node_move_end)
+	self.connection_request.connect(_on_connection_request)
+	self.disconnection_request.connect(_on_disconnect_request)
+	self.delete_nodes_request.connect(_on_delete_node_request)
+	self.end_node_move.connect(_on_node_move_end)
 
 func add_new_node() -> void:
 	var new_node: CraftingItemNode = CraftingItemNodeResource.instantiate()
@@ -20,9 +20,9 @@ func add_new_node() -> void:
 	var number_of_children = self.get_child_count()
 	if number_of_children > 1:
 		var last_child_pos := (self.get_children()[number_of_children - 1] as CraftingItemNode).position
-		new_node.position_offset = Vector2(last_child_pos.x + 32, last_child_pos.y + 32)
+		new_node.position_offset = Vector2(last_child_pos.x + 16, last_child_pos.y + 16)
 	
-	new_node.connect("node_changed", _on_node_changed)
+	new_node.node_changed.connect(_on_node_changed)
 	
 	self.add_child(new_node, true)
 	
@@ -54,9 +54,7 @@ func _on_node_changed() -> void:
 func save_data() -> GraphData:
 	var graph_data = GraphData.new()
 	
-	graph_data.crafting_catalog = CraftingCatalog.new()
-	graph_data.crafting_catalog.recipes.append_array(_build_recipes())
-	graph_data.crafting_catalog.items.append_array(_build_items_list())
+	graph_data.crafting_catalog = _build_crafting_catalog()
 	
 	## For the restored connections to work we must convert the @ symbol to underscores
 	for connection in self.get_connection_list():
@@ -73,46 +71,34 @@ func save_data() -> GraphData:
 			var node_data = NodeData.new()
 			node_data.name = node.name.replace("@", "_")
 			node_data.offset = node.position_offset
-			node_data.element = node.to_element_resource()
+			node_data.item_label = node.get_label()
+			node_data.item_icon = node.get_icon_texture()
+			print("Got node data: ", node_data.item_icon, node_data.item_label)
 			graph_data.nodes.append(node_data)
 	return graph_data
 
 
-func _build_items_list() -> Array[CraftingItemResource]:
-	var items: Array[CraftingItemResource]
+func _build_crafting_catalog() -> CraftingCatalog:
+	var catalog: CraftingCatalog = CraftingCatalog.new()
+	
+	## First we need to create every crafting item and add it to the catalog
 	for node in self.get_children():
 		if node is CraftingItemNode:
-			items.append(node.to_element_resource())
-	return items
-
-func _build_recipes() -> Array[CraftingRecipeResource]:
-	var recipes: Array[CraftingRecipeResource]
-	var items_dict = {}
+			var crafting_item = CraftingItemResource.new()
+			crafting_item.label = node.get_label()
+			crafting_item.icon = node.get_icon_texture()
+			
+			catalog.add_item(crafting_item)
 	
+	## Next we need to get recipes and add them to the path
 	for con in self.get_connection_list():
+		## An ingredent
 		var start: CraftingItemNode = get_node(NodePath(con.from_node))
+		## the item this recipe belongs to
 		var end: CraftingItemNode = get_node(NodePath(con.to_node))
 		
-		var start_res = start.to_element_resource()
-		var end_res = end.to_element_resource()
-		
-		if items_dict.has(end_res.label):
-			items_dict[end_res.label].inputs.append(start_res)
-		else:
-			items_dict[end_res.label] = {
-				output = end_res,
-				inputs = [start_res]
-			}
-	
-	for key in items_dict.keys():
-		var recipe: CraftingRecipeResource = CraftingRecipeResource.new()
-		recipe.inputs.append_array(items_dict[key].inputs)
-		recipe.output = items_dict[key].output
-		
-		recipes.append(recipe)
-	
-	return recipes
-
+		catalog.add_ingredient(end.get_label(), start.get_label())
+	return catalog
 
 func init_graph(graph_data: GraphData):
 	clear_graph()
@@ -120,7 +106,10 @@ func init_graph(graph_data: GraphData):
 		var new_node: CraftingItemNode = CraftingItemNodeResource.instantiate()
 		new_node.name = node.name
 		new_node.position_offset = node.offset
-		new_node.resource = node.element
+		new_node.restore_label = node.item_label
+		new_node.restore_icon_texture = node.item_icon
+		
+		new_node.node_changed.connect(_on_node_changed)
 		self.add_child(new_node)
 	for con in graph_data.connections:
 		self.connect_node(con.from_node, con.from_port, con.to_node, con.to_port)

@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://dk3xv5m058m72"]
-
-[ext_resource type="Script" path="res://library/item.gd" id="1_drdgf"]
-
-[resource]
-script = ExtResource("1_drdgf")
-name = "Fire"
-unlocked = true

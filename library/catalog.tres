@@ -1,202 +1,183 @@
-[gd_resource type="Resource" script_class="GraphData" load_steps=41 format=3 uid="uid://dnsjq20hbyb2n"]
+[gd_resource type="Resource" script_class="GraphData" load_steps=24 format=3 uid="uid://dnsjq20hbyb2n"]
 
 [ext_resource type="Script" path="res://addons/recipebuilder/components/graph/node_data.gd" id="1_4d3bb"]
 [ext_resource type="Texture2D" uid="uid://b6exm36lkqkql" path="res://art/items/Dirt.png" id="2_0p1l8"]
 [ext_resource type="Script" path="res://addons/recipebuilder/resources/CraftingItem.gd" id="2_mobtw"]
-[ext_resource type="Script" path="res://addons/recipebuilder/resources/CraftingRecipe.gd" id="3_x83ys"]
+[ext_resource type="Texture2D" uid="uid://du5usmc02ru8t" path="res://art/items/Brick.png" id="3_g6wt6"]
 [ext_resource type="Script" path="res://addons/recipebuilder/resources/CraftingCatalog.gd" id="4_64064"]
 [ext_resource type="Script" path="res://addons/recipebuilder/components/graph/graph_data.gd" id="4_y3pun"]
 
-[sub_resource type="Resource" id="Resource_7jjag"]
-script = ExtResource("2_mobtw")
-label = "Fire"
-
-[sub_resource type="Resource" id="Resource_8cl87"]
-script = ExtResource("2_mobtw")
-label = "Water"
-
-[sub_resource type="Resource" id="Resource_y32xo"]
-script = ExtResource("2_mobtw")
-label = "Mud"
-
-[sub_resource type="Resource" id="Resource_oada5"]
-script = ExtResource("2_mobtw")
-label = "Dirt"
-icon = ExtResource("2_0p1l8")
-
-[sub_resource type="Resource" id="Resource_3oabc"]
+[sub_resource type="Resource" id="Resource_oxfpq"]
 script = ExtResource("2_mobtw")
 label = "Air"
+unlocked = false
 
-[sub_resource type="Resource" id="Resource_jmbjr"]
+[sub_resource type="Resource" id="Resource_gt1o3"]
 script = ExtResource("2_mobtw")
 label = "Brick"
+icon = ExtResource("3_g6wt6")
+unlocked = false
 
-[sub_resource type="Resource" id="Resource_tr6ev"]
+[sub_resource type="Resource" id="Resource_ibmqt"]
 script = ExtResource("2_mobtw")
-label = "Steam"
+label = "Clouds"
+unlocked = false
 
-[sub_resource type="Resource" id="Resource_nvvg0"]
+[sub_resource type="Resource" id="Resource_b3ls2"]
 script = ExtResource("2_mobtw")
 label = "Dirt"
 icon = ExtResource("2_0p1l8")
+unlocked = false
 
-[sub_resource type="Resource" id="Resource_607q3"]
+[sub_resource type="Resource" id="Resource_23i6h"]
 script = ExtResource("2_mobtw")
-label = "Water"
+label = "Fire"
+unlocked = false
 
-[sub_resource type="Resource" id="Resource_qauj2"]
+[sub_resource type="Resource" id="Resource_wyq8d"]
 script = ExtResource("2_mobtw")
 label = "Mud"
+unlocked = false
 
-[sub_resource type="Resource" id="Resource_g8s7h"]
-script = ExtResource("3_x83ys")
-inputs = Array[ExtResource("2_mobtw")]([SubResource("Resource_nvvg0"), SubResource("Resource_607q3")])
-output = SubResource("Resource_qauj2")
-
-[sub_resource type="Resource" id="Resource_51w2p"]
-script = ExtResource("2_mobtw")
-label = "Water"
-
-[sub_resource type="Resource" id="Resource_r1nhq"]
-script = ExtResource("2_mobtw")
-label = "Fire"
-
-[sub_resource type="Resource" id="Resource_o6dq7"]
+[sub_resource type="Resource" id="Resource_n1mgi"]
 script = ExtResource("2_mobtw")
 label = "Steam"
+unlocked = false
 
-[sub_resource type="Resource" id="Resource_87pki"]
-script = ExtResource("3_x83ys")
-inputs = Array[ExtResource("2_mobtw")]([SubResource("Resource_51w2p"), SubResource("Resource_r1nhq")])
-output = SubResource("Resource_o6dq7")
-
-[sub_resource type="Resource" id="Resource_ct63q"]
+[sub_resource type="Resource" id="Resource_clppa"]
 script = ExtResource("2_mobtw")
-label = "Fire"
+label = "Water"
+unlocked = false
 
-[sub_resource type="Resource" id="Resource_wbf5f"]
-script = ExtResource("2_mobtw")
-label = "Dirt"
-icon = ExtResource("2_0p1l8")
-
-[sub_resource type="Resource" id="Resource_kma5x"]
-script = ExtResource("2_mobtw")
-label = "Brick"
-
-[sub_resource type="Resource" id="Resource_7n5eu"]
-script = ExtResource("3_x83ys")
-inputs = Array[ExtResource("2_mobtw")]([SubResource("Resource_ct63q"), SubResource("Resource_wbf5f")])
-output = SubResource("Resource_kma5x")
-
-[sub_resource type="Resource" id="Resource_lf3st"]
+[sub_resource type="Resource" id="Resource_moapf"]
 script = ExtResource("4_64064")
-items = Array[ExtResource("2_mobtw")]([SubResource("Resource_7jjag"), SubResource("Resource_8cl87"), SubResource("Resource_y32xo"), SubResource("Resource_oada5"), SubResource("Resource_3oabc"), SubResource("Resource_jmbjr"), SubResource("Resource_tr6ev")])
-recipes = Array[ExtResource("3_x83ys")]([SubResource("Resource_g8s7h"), SubResource("Resource_87pki"), SubResource("Resource_7n5eu")])
+items = {
+"Air": {
+"ingredients": [],
+"item": SubResource("Resource_oxfpq")
+},
+"Brick": {
+"ingredients": ["Mud", "Fire"],
+"item": SubResource("Resource_gt1o3")
+},
+"Clouds": {
+"ingredients": ["Air", "Steam"],
+"item": SubResource("Resource_ibmqt")
+},
+"Dirt": {
+"ingredients": [],
+"item": SubResource("Resource_b3ls2")
+},
+"Fire": {
+"ingredients": [],
+"item": SubResource("Resource_23i6h")
+},
+"Mud": {
+"ingredients": ["Water", "Dirt"],
+"item": SubResource("Resource_wyq8d")
+},
+"Steam": {
+"ingredients": ["Fire", "Water"],
+"item": SubResource("Resource_n1mgi")
+},
+"Water": {
+"ingredients": [],
+"item": SubResource("Resource_clppa")
+}
+}
 
-[sub_resource type="Resource" id="Resource_rkja5"]
-script = ExtResource("2_mobtw")
-label = "Fire"
-
-[sub_resource type="Resource" id="Resource_s4ivf"]
+[sub_resource type="Resource" id="Resource_mon66"]
 script = ExtResource("1_4d3bb")
-name = "_GraphNode_420617"
-offset = Vector2(80, 1060)
-element = SubResource("Resource_rkja5")
+name = "ItemNode2"
+offset = Vector2(20, 240)
+item_label = "Water"
 
-[sub_resource type="Resource" id="Resource_o607r"]
-script = ExtResource("2_mobtw")
-label = "Water"
-
-[sub_resource type="Resource" id="Resource_in53s"]
+[sub_resource type="Resource" id="Resource_xb8g8"]
 script = ExtResource("1_4d3bb")
-name = "_GraphNode_420605"
-offset = Vector2(80, 680)
-element = SubResource("Resource_o607r")
+name = "ItemNode3"
+offset = Vector2(20, 60)
+item_label = "Fire"
 
-[sub_resource type="Resource" id="Resource_tg2op"]
-script = ExtResource("2_mobtw")
-label = "Mud"
-
-[sub_resource type="Resource" id="Resource_ohufl"]
+[sub_resource type="Resource" id="Resource_jbt43"]
 script = ExtResource("1_4d3bb")
-name = "_GraphNode_420631"
-offset = Vector2(560, 640)
-element = SubResource("Resource_tg2op")
+name = "ItemNode4"
+offset = Vector2(20, 420)
+item_label = "Dirt"
+item_icon = ExtResource("2_0p1l8")
 
-[sub_resource type="Resource" id="Resource_bagdi"]
-script = ExtResource("2_mobtw")
-label = "Dirt"
-icon = ExtResource("2_0p1l8")
-
-[sub_resource type="Resource" id="Resource_s3k8s"]
+[sub_resource type="Resource" id="Resource_lq0qe"]
 script = ExtResource("1_4d3bb")
-name = "ElementNode"
-offset = Vector2(80, 860)
-element = SubResource("Resource_bagdi")
+name = "ItemNode6"
+offset = Vector2(460, 320)
+item_label = "Mud"
 
-[sub_resource type="Resource" id="Resource_g6362"]
-script = ExtResource("2_mobtw")
-label = "Air"
-
-[sub_resource type="Resource" id="Resource_jl3o2"]
+[sub_resource type="Resource" id="Resource_4rdo1"]
 script = ExtResource("1_4d3bb")
-name = "_GraphNode_420611"
-offset = Vector2(80, 500)
-element = SubResource("Resource_g6362")
+name = "ItemNode"
+offset = Vector2(20, -120)
+item_label = "Air"
 
-[sub_resource type="Resource" id="Resource_xyenb"]
-script = ExtResource("2_mobtw")
-label = "Brick"
-
-[sub_resource type="Resource" id="Resource_o5anf"]
+[sub_resource type="Resource" id="Resource_2pfgq"]
 script = ExtResource("1_4d3bb")
-name = "ElementNode2"
-offset = Vector2(560, 1040)
-element = SubResource("Resource_xyenb")
+name = "ItemNode8"
+offset = Vector2(840, -120)
+item_label = "Clouds"
 
-[sub_resource type="Resource" id="Resource_4udv6"]
-script = ExtResource("2_mobtw")
-label = "Steam"
-
-[sub_resource type="Resource" id="Resource_tkr5v"]
+[sub_resource type="Resource" id="Resource_ut1it"]
 script = ExtResource("1_4d3bb")
-name = "_GraphNode_420623"
-offset = Vector2(560, 820)
-element = SubResource("Resource_4udv6")
+name = "ItemNode7"
+offset = Vector2(840, 60)
+item_label = "Brick"
+item_icon = ExtResource("3_g6wt6")
+
+[sub_resource type="Resource" id="Resource_1kneu"]
+script = ExtResource("1_4d3bb")
+name = "ItemNode5"
+offset = Vector2(460, 140)
+item_label = "Steam"
 
 [resource]
 script = ExtResource("4_y3pun")
 connections = Array[Dictionary]([{
-"from_node": "ElementNode",
+"from_node": "ItemNode3",
 "from_port": 0,
-"to_node": "_GraphNode_420631",
+"to_node": "ItemNode5",
 "to_port": 0
 }, {
-"from_node": "_GraphNode_420605",
+"from_node": "ItemNode2",
 "from_port": 0,
-"to_node": "_GraphNode_420631",
+"to_node": "ItemNode5",
 "to_port": 0
 }, {
-"from_node": "_GraphNode_420605",
+"from_node": "ItemNode2",
 "from_port": 0,
-"to_node": "_GraphNode_420623",
+"to_node": "ItemNode6",
 "to_port": 0
 }, {
-"from_node": "_GraphNode_420617",
+"from_node": "ItemNode4",
 "from_port": 0,
-"to_node": "_GraphNode_420623",
+"to_node": "ItemNode6",
 "to_port": 0
 }, {
-"from_node": "_GraphNode_420617",
+"from_node": "ItemNode",
 "from_port": 0,
-"to_node": "ElementNode2",
+"to_node": "ItemNode8",
 "to_port": 0
 }, {
-"from_node": "ElementNode",
+"from_node": "ItemNode5",
 "from_port": 0,
-"to_node": "ElementNode2",
+"to_node": "ItemNode8",
+"to_port": 0
+}, {
+"from_node": "ItemNode6",
+"from_port": 0,
+"to_node": "ItemNode7",
+"to_port": 0
+}, {
+"from_node": "ItemNode3",
+"from_port": 0,
+"to_node": "ItemNode7",
 "to_port": 0
 }])
-nodes = Array[ExtResource("1_4d3bb")]([SubResource("Resource_s4ivf"), SubResource("Resource_in53s"), SubResource("Resource_ohufl"), SubResource("Resource_s3k8s"), SubResource("Resource_jl3o2"), SubResource("Resource_o5anf"), SubResource("Resource_tkr5v")])
-crafting_catalog = SubResource("Resource_lf3st")
+nodes = Array[ExtResource("1_4d3bb")]([SubResource("Resource_mon66"), SubResource("Resource_xb8g8"), SubResource("Resource_jbt43"), SubResource("Resource_lq0qe"), SubResource("Resource_4rdo1"), SubResource("Resource_2pfgq"), SubResource("Resource_ut1it"), SubResource("Resource_1kneu")])
+crafting_catalog = SubResource("Resource_moapf")

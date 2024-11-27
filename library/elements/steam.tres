@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://df15vfha3voot"]
-
-[ext_resource type="Script" path="res://library/item.gd" id="1_uvoqf"]
-
-[resource]
-script = ExtResource("1_uvoqf")
-name = "Steam"
-unlocked = false

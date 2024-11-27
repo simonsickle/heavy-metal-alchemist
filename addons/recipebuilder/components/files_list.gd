@@ -56,6 +56,10 @@ func select_file(file: String) -> void:
 			last_selected_file_path = file
 
 
+func is_file_unsaved(path: String) -> bool:
+	return unsaved_files.has(path)
+
+
 func mark_file_as_unsaved(file: String, is_unsaved: bool) -> void:
 	if not file in unsaved_files and is_unsaved:
 		unsaved_files.append(file)

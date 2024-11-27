@@ -15,9 +15,14 @@ run/main_scene="res://crafting_screen.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+CatalogManager="*res://library/catalog_manager.gd"
+ToastParty="*res://addons/toastparty/toast-autoload.gd"
+
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/plugin_refresher/plugin.cfg", "res://addons/recipebuilder/plugin.cfg")
+enabled=PackedStringArray("res://addons/plugin_refresher/plugin.cfg", "res://addons/recipebuilder/plugin.cfg", "res://addons/toastparty/plugin.cfg")
 
 [rendering]
 

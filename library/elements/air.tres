@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="ElementResource" load_steps=2 format=3 uid="uid://cc0dhxtwt1ct1"]
-
-[ext_resource type="Script" path="res://addons/alchemyeditor/resources/element_resource.gd" id="1_yb3cx"]
-
-[resource]
-script = ExtResource("1_yb3cx")
-name = "Air"
-description = ""

@@ -2,27 +2,70 @@ extends Resource
 
 class_name CraftingCatalog
 
-@export var items: Array[CraftingItemResource]
-@export var recipes: Array[CraftingRecipeResource]
+@export var items: Dictionary = {}
 
-func check_recipe(first: CraftingItemResource, second: CraftingItemResource) -> CraftingItemResource:
-	## This expects that recipes are only 2 items... FIXME
-	for recipe in recipes:
-		if recipe.inputs.has(first) and recipe.inputs.has(second):
-			return recipe.output
-	
-	## This doesn't make anything, try again!
+func get_unlocked_items() -> Array[CraftingItemResource]:
+	var crafting_items: Array[CraftingItemResource] = []
+	for entry_key in items.keys():
+		var entry = items[entry_key]
+		if entry.item.unlocked or entry.ingredients.size() == 0:
+			crafting_items.append(entry.item)
+	return crafting_items
+
+
+func get_crafting_items() -> Array[CraftingItemResource]:
+	var crafting_items: Array[CraftingItemResource] = []
+	for row in items:
+		crafting_items.append(row.item)
+	return crafting_items
+
+
+func get_item_ingredients(item_name: String) -> Array[CraftingItemResource]:
+	return items[item_name].ingredients
+
+
+func get_item(item_name: String) -> CraftingItemResource:
+	if items.has(item_name):
+		return items[item_name].item
 	return null
 
-## Return an array of items that should be unlocked by default since they have no
-## recipe to create them.
-func get_default_unlocked() -> Array[CraftingItemResource]:
-	var unlocked_items = items
+
+func add_item(crafting_item: CraftingItemResource) -> void:
+	if items.has(crafting_item.label):
+		printerr("ERROR: Crafting catalog already has item named ", crafting_item.label)
+		return
 	
-	## Loop through recipes to remove anything that is listed as an output
-	for recipe in recipes:
-		var idx = unlocked_items.find(recipe.output)
-		if idx > 0 and idx < unlocked_items.size():
-			unlocked_items.remove_at(idx)
+	items[crafting_item.label] = {
+		item = crafting_item,
+		ingredients = [],
+	}
+
+
+func add_ingredient(item_name: String, ingredient_name: String) -> void:
+	items[item_name].ingredients.append(ingredient_name)
+
+func unlock_item(item_name: String) -> CraftingItemResource:
+	var item = items[item_name].item
+	item.unlocked = true
+	return item
+
+func check_recipe_and_unlock(ingredients: Array[String]) -> CraftingItemResource:
+	if ingredients.size() == 0: return null
 	
-	return unlocked_items
+	for entry_key in items.keys():
+		var entry = items[entry_key]
+		## No basic items
+		if entry.ingredients.size() == 0: continue
+		## No match if ingredients are different size
+		if entry.ingredients.size() != ingredients.size(): continue
+		## No already unlocked items
+		if entry.item.unlocked: continue
+		
+		var matches = true
+		for ingredient in ingredients:
+			matches = matches and entry.ingredients.has(ingredient)
+		
+		if matches:
+			entry.item.unlocked = true
+			return entry.item
+	return null
