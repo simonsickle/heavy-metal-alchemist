@@ -14,6 +14,7 @@ func _ready() -> void:
 	CreditsButton.pressed.connect(_show_credits)
 	ExitGameButton.pressed.connect(_on_exit_game)
 	
+	ExitGameButton.visible = OS.get_name() != "Web"
 	ResumeButton.visible = CatalogManager.can_resume()
 
 func _on_resume_game() -> void:

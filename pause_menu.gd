@@ -12,6 +12,8 @@ func _ready() -> void:
 	
 	ResumeBtn.pressed.connect(_on_resume_pressed)
 	ExitBtn.pressed.connect(_on_exit_pressed)
+	
+	ExitBtn.visible = OS.get_name() != "Web"
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_pause"):
