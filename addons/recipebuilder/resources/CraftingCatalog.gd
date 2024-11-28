@@ -57,15 +57,23 @@ func check_recipe_and_unlock(ingredients: Array[String]) -> CraftingItemResource
 		## No basic items
 		if entry.ingredients.size() == 0: continue
 		## No match if ingredients are different size
-		if entry.ingredients.size() != ingredients.size(): continue
+		if entry.ingredients.size() != 1 and entry.ingredients.size() != ingredients.size(): continue
 		## No already unlocked items
 		if entry.item.unlocked: continue
 		
-		var matches = true
-		for ingredient in ingredients:
-			matches = matches and entry.ingredients.has(ingredient)
+		## Make a duplicate array to allow for removal from the provided ingredients
+		var cloned_ingredients = []
+		cloned_ingredients.append_array(entry.ingredients)
+
+		## If only one ingredient is taken, duplicate it since some items take the same thing
+		if cloned_ingredients.size() == 1:
+			cloned_ingredients.append(cloned_ingredients[0])
 		
-		if matches:
+		## The arrays aren't guarenteed to be sorted yet which makes comparison difficult
+		cloned_ingredients.sort()
+		ingredients.sort()
+		
+		if cloned_ingredients == ingredients:
 			entry.item.unlocked = true
 			return entry.item
 	return null

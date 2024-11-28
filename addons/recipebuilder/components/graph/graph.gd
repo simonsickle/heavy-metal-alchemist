@@ -97,6 +97,7 @@ func _build_crafting_catalog() -> CraftingCatalog:
 		var end: CraftingItemNode = get_node(NodePath(con.to_node))
 		
 		catalog.add_ingredient(end.get_label(), start.get_label())
+	
 	return catalog
 
 func init_graph(graph_data: GraphData):
