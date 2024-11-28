@@ -3,8 +3,8 @@ class_name ItemSlotUi
 
 @export var item: CraftingItemResource = null
 
-@onready var icon_image := $Icon
-@onready var label := $Label
+@onready var icon_image := $VBoxContainer/Background/Icon
+@onready var label := $VBoxContainer/Label
 
 var ItemDragPreview = preload("res://library/item_drag_preview.tscn")
 var ShimmerMaterial = preload("res://shaders/shimmer.material")

@@ -3,8 +3,8 @@ class_name ItemInputSlot
 
 @export var item: CraftingItemResource = null
 
-@onready var icon_image := $Icon
-@onready var label := $Label
+@onready var icon_image := $VBoxContainer/Background/Icon
+@onready var label := $VBoxContainer/Label
 
 func _can_drop_data(at_position: Vector2, data: Variant) -> bool:
 	return data is CraftingItemResource
