@@ -57,8 +57,6 @@ text = "Combine"
 [node name="FirstItem" parent="." instance=ExtResource("4_0u4km")]
 layout_mode = 0
 anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
 offset_left = 225.0
 offset_top = 225.0
 offset_right = 289.0
@@ -69,8 +67,6 @@ grow_vertical = 1
 [node name="SecondItem" parent="." instance=ExtResource("4_0u4km")]
 layout_mode = 0
 anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
 offset_left = 353.0
 offset_top = 225.0
 offset_right = 417.0

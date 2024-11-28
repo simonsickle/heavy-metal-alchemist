@@ -27,20 +27,18 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	combine_button.visible = first_item.item and second_item.item
+	
+	if not audio_player.stream_paused:
+		music_toggle.texture_normal = load("res://art/ui/volume_on.svg")
+	else:
+		music_toggle.texture_normal = load("res://art/ui/volume_off.svg")
 
 func _on_pause_state_changed(paused: bool) -> void:
 	if not paused:
 		transition_manager.fade_in()
 
 func _on_music_toggled() -> void:
-	var should_play_music = not audio_player.playing
-	
-	if should_play_music:
-		music_toggle.texture_normal = load("res://art/ui/volume_on.svg")
-	else:
-		music_toggle.texture_normal = load("res://art/ui/volume_off.svg")
-	
-	audio_player.playing = should_play_music
+	audio_player.stream_paused = not audio_player.stream_paused
 
 
 func _on_new_item_unlocked(item: CraftingItemResource) -> void:
