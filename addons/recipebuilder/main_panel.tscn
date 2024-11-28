@@ -75,7 +75,7 @@ text = "Create New Item"
 [node name="Graph" parent="VBox/HBoxContainer" instance=ExtResource("3_ltbox")]
 layout_mode = 2
 size_flags_horizontal = 3
-scroll_offset = Vector2(-146, -35)
+scroll_offset = Vector2(-214, -32)
 panning_scheme = 1
 right_disconnects = true
 

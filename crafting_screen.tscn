@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://ohf61dvgfgl3"]
+[gd_scene load_steps=10 format=3 uid="uid://ohf61dvgfgl3"]
 
 [ext_resource type="Script" path="res://crafting_screen.gd" id="1_rwenr"]
 [ext_resource type="PackedScene" uid="uid://pt2qtqluawnl" path="res://library/catalog_ui.tscn" id="1_wnuwp"]
+[ext_resource type="Texture2D" uid="uid://dww44d3tx331m" path="res://art/ui/crafting-scene-bg.png" id="2_6u4ex"]
 [ext_resource type="FontFile" uid="uid://c1vwfyoxivvfi" path="res://art/joystix monospace.otf" id="3_dyh8x"]
 [ext_resource type="PackedScene" uid="uid://cdjexm7hf6367" path="res://library/item_input_slot.tscn" id="4_0u4km"]
+[ext_resource type="AudioStream" uid="uid://7i8u2gabj080" path="res://audio/TheShadowRealm.mp3" id="5_6nlcy"]
+[ext_resource type="Texture2D" uid="uid://d1iasgals5hbu" path="res://art/ui/volume_on.svg" id="6_3f4n5"]
+[ext_resource type="PackedScene" uid="uid://b8k2a8iadvhan" path="res://transition/TransitionManager.tscn" id="8_0v7mc"]
+[ext_resource type="PackedScene" uid="uid://bo07h75c5e1um" path="res://PauseMenu.tscn" id="9_cpibr"]
 
 [node name="CraftingScreen" type="Control"]
 layout_mode = 3
@@ -14,6 +19,17 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 0.989597)
 script = ExtResource("1_rwenr")
+
+[node name="BackgroundTexture" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_6u4ex")
+expand_mode = 5
+stretch_mode = 5
 
 [node name="Catalog" parent="." instance=ExtResource("1_wnuwp")]
 layout_mode = 1
@@ -69,4 +85,36 @@ offset_top = 16.0
 offset_right = 215.0
 offset_bottom = 39.0
 theme_override_fonts/font = ExtResource("3_dyh8x")
-text = "test"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_6nlcy")
+autoplay = true
+parameters/looping = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 16.0
+offset_top = 55.0
+offset_right = 259.0
+offset_bottom = 79.0
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_dyh8x")
+text = "Background Music"
+
+[node name="MusicToggle" type="TextureButton" parent="HBoxContainer"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("6_3f4n5")
+stretch_mode = 0
+
+[node name="TransitionManager" parent="." instance=ExtResource("8_0v7mc")]
+layout_mode = 1
+
+[node name="PauseMenu" parent="." instance=ExtResource("9_cpibr")]
+visible = false
+layout_mode = 1

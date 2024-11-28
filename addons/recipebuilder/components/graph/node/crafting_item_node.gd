@@ -12,11 +12,9 @@ signal node_changed
 @export var restore_icon_texture: Texture2D
 
 func get_label() -> String:
-	print("Getting name: ", name_input.text)
 	return name_input.text
 
 func get_icon_texture() -> Texture2D:
-	print("Getting icon: ", icon_selector.edited_resource)
 	return icon_selector.edited_resource
 
 func _ready() -> void:

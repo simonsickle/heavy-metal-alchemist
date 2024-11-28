@@ -11,15 +11,19 @@ var _catalog: CraftingCatalog
 var _game_save: GameSave
 
 func _ready() -> void:
+	## Create the initial items
+	_init_catalog()
+	
+	## Save game progress
+	_handle_save_restore()
+
+func _init_catalog() -> void:
 	var data = ResourceLoader.load("res://library/catalog.tres")
 	_catalog = data.crafting_catalog
 	
 	## Handle the initial unlocked items to insure order remains the same between saves
 	items.append_array(_catalog.get_unlocked_items())
-	
-	## Save game progress
-	_handle_save_restore()
-	_restore_from_save()
+
 
 func _handle_save_restore() -> void:
 	var game_save = ResourceLoader.load(SAVE_GAME_FILE)
@@ -30,14 +34,27 @@ func _handle_save_restore() -> void:
 	else:
 		_game_save = game_save as GameSave
 
+func can_resume() -> bool:
+	return _game_save.unlocked_items.keys().size() > 0
 
-func _restore_from_save() -> void:
+func resume_game() -> void:
 	for key in _game_save.unlocked_items.keys():
 		var unlocked_from_save = _catalog.unlock_item(key)
 		## Don't duplicate entries
 		if items.has(unlocked_from_save): continue
 		
 		items.append(unlocked_from_save)
+
+
+func reset_game_state() -> void:
+	_game_save = GameSave.new()
+	_game_save.unlocked_items = {}
+	var err = ResourceSaver.save(GameSave.new(), SAVE_GAME_FILE)
+	if err != OK:
+		printerr("Could not reset game save: ", err)
+
+	items.clear()
+	_init_catalog()
 
 
 func _save_game() -> void:
@@ -47,11 +64,8 @@ func _save_game() -> void:
 		_game_save.unlocked_items[item.label] = {
 			unlocked_at = Time.get_time_string_from_system(),
 		}
-		
-
 	
 	var err = ResourceSaver.save(_game_save, SAVE_GAME_FILE)
-	
 	if err != OK:
 		printerr("Error Saving: ", err)
 

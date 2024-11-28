@@ -73,7 +73,6 @@ func save_data() -> GraphData:
 			node_data.offset = node.position_offset
 			node_data.item_label = node.get_label()
 			node_data.item_icon = node.get_icon_texture()
-			print("Got node data: ", node_data.item_icon, node_data.item_label)
 			graph_data.nodes.append(node_data)
 	return graph_data
 

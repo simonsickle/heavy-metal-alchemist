@@ -7,6 +7,7 @@ class_name ItemSlotUi
 @onready var label := $Label
 
 var ItemDragPreview = preload("res://library/item_drag_preview.tscn")
+var ShimmerMaterial = preload("res://shaders/shimmer.material")
 
 # Called whenever the item is clicked on the UI
 signal on_item_click(item: CraftingItemResource)
@@ -25,8 +26,7 @@ func _process(delta: float) -> void:
 		icon_image.texture = null
 		label.text = ""
 
-
-#func _gui_input(event: InputEvent) -> void:
-	#if event is InputEventMouseButton:
-		#if event.button_index == MOUSE_BUTTON_LEFT and event.is_released():
-			#on_item_click.emit(item)
+func play_shimmer_animation() -> void:
+	icon_image.material = ShimmerMaterial
+	await get_tree().create_timer(4).timeout
+	icon_image.material = null
