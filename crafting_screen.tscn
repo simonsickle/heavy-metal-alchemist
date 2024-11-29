@@ -8,7 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://7i8u2gabj080" path="res://audio/TheShadowRealm.mp3" id="5_6nlcy"]
 [ext_resource type="Texture2D" uid="uid://d1iasgals5hbu" path="res://art/ui/volume_on.svg" id="6_3f4n5"]
 [ext_resource type="PackedScene" uid="uid://b8k2a8iadvhan" path="res://transition/TransitionManager.tscn" id="8_0v7mc"]
-[ext_resource type="PackedScene" uid="uid://bo07h75c5e1um" path="res://PauseMenu.tscn" id="9_cpibr"]
+[ext_resource type="PackedScene" uid="uid://bo07h75c5e1um" path="res://ui/pause/PauseMenu.tscn" id="9_cpibr"]
 
 [node name="CraftingScreen" type="Control"]
 layout_mode = 3

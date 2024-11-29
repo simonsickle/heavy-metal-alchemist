@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bo07h75c5e1um"]
 
-[ext_resource type="Script" path="res://pause_menu.gd" id="1_g1wqb"]
+[ext_resource type="Script" path="res://ui/pause/PauseMenu.gd" id="1_g1wqb"]
 [ext_resource type="Texture2D" uid="uid://bg05mj2fh6kqd" path="res://art/title-screen-icon.png" id="2_h0fhp"]
 [ext_resource type="PackedScene" uid="uid://b8k2a8iadvhan" path="res://transition/TransitionManager.tscn" id="3_47bip"]
 [ext_resource type="PackedScene" uid="uid://px6a2dg8cawb" path="res://addons/modular-settings-menu/scenes/settings.tscn" id="4_v5e77"]
