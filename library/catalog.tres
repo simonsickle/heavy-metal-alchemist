@@ -19,438 +19,438 @@
 [ext_resource type="Texture2D" uid="uid://dk1gr1k2fgfr4" path="res://art/items/Nuke.png" id="11_afgrn"]
 [ext_resource type="Texture2D" uid="uid://d1iaqsgeiatd5" path="res://art/items/Plasma.png" id="11_ahgwq"]
 
-[sub_resource type="Resource" id="Resource_qib1h"]
+[sub_resource type="Resource" id="Resource_y5r0i"]
 script = ExtResource("2_mobtw")
 label = "Water"
 icon = ExtResource("1_xrp3s")
 unlocked = false
 
-[sub_resource type="Resource" id="Resource_sd57d"]
+[sub_resource type="Resource" id="Resource_y3f4f"]
 script = ExtResource("2_mobtw")
 label = "Fire"
 icon = ExtResource("3_5mmvs")
 unlocked = false
 
-[sub_resource type="Resource" id="Resource_ix5vs"]
+[sub_resource type="Resource" id="Resource_hifsh"]
 script = ExtResource("2_mobtw")
 label = "Air"
 icon = ExtResource("4_qj1ql")
 unlocked = false
 
-[sub_resource type="Resource" id="Resource_10a2d"]
+[sub_resource type="Resource" id="Resource_ltygj"]
 script = ExtResource("2_mobtw")
 label = "Wind"
 unlocked = false
 
-[sub_resource type="Resource" id="Resource_6f3ce"]
+[sub_resource type="Resource" id="Resource_psbgv"]
 script = ExtResource("2_mobtw")
 label = "Ice"
 icon = ExtResource("5_e0dvy")
 unlocked = false
 
-[sub_resource type="Resource" id="Resource_3wxta"]
+[sub_resource type="Resource" id="Resource_tqra1"]
 script = ExtResource("2_mobtw")
 label = "Heat"
 unlocked = false
 
-[sub_resource type="Resource" id="Resource_xi250"]
+[sub_resource type="Resource" id="Resource_supo8"]
 script = ExtResource("2_mobtw")
 label = "Ore"
 unlocked = false
 
-[sub_resource type="Resource" id="Resource_k17ra"]
+[sub_resource type="Resource" id="Resource_muw6p"]
 script = ExtResource("2_mobtw")
 label = "Dust"
 unlocked = false
 
-[sub_resource type="Resource" id="Resource_1nslt"]
+[sub_resource type="Resource" id="Resource_kfkg3"]
 script = ExtResource("2_mobtw")
 label = "Steam"
 unlocked = false
 
-[sub_resource type="Resource" id="Resource_g4iun"]
+[sub_resource type="Resource" id="Resource_ogpwy"]
 script = ExtResource("2_mobtw")
 label = "Pressure"
 icon = ExtResource("6_gm7d1")
 unlocked = false
 
-[sub_resource type="Resource" id="Resource_12l22"]
+[sub_resource type="Resource" id="Resource_syqr5"]
 script = ExtResource("2_mobtw")
 label = "Diamond"
 icon = ExtResource("6_8yj85")
 unlocked = false
 
-[sub_resource type="Resource" id="Resource_2o43a"]
+[sub_resource type="Resource" id="Resource_6ivwc"]
 script = ExtResource("2_mobtw")
 label = "Uranium"
 unlocked = false
 
-[sub_resource type="Resource" id="Resource_fbah6"]
+[sub_resource type="Resource" id="Resource_b3a4t"]
 script = ExtResource("2_mobtw")
 label = "Metal"
 unlocked = false
 
-[sub_resource type="Resource" id="Resource_2igqr"]
+[sub_resource type="Resource" id="Resource_1ov8u"]
 script = ExtResource("2_mobtw")
 label = "Reactor"
 unlocked = false
 
-[sub_resource type="Resource" id="Resource_vekgw"]
+[sub_resource type="Resource" id="Resource_pwcpp"]
 script = ExtResource("2_mobtw")
 label = "Gunpowder"
 unlocked = false
 
-[sub_resource type="Resource" id="Resource_7c23l"]
+[sub_resource type="Resource" id="Resource_iq285"]
 script = ExtResource("2_mobtw")
 label = "TNT"
 icon = ExtResource("8_t2ido")
 unlocked = false
 
-[sub_resource type="Resource" id="Resource_xkg4m"]
+[sub_resource type="Resource" id="Resource_4thg0"]
 script = ExtResource("2_mobtw")
 label = "Rock"
 icon = ExtResource("9_aww2r")
 unlocked = false
 
-[sub_resource type="Resource" id="Resource_48iyo"]
+[sub_resource type="Resource" id="Resource_rvj8k"]
 script = ExtResource("2_mobtw")
 label = "Stone"
 icon = ExtResource("10_154px")
 unlocked = false
 
-[sub_resource type="Resource" id="Resource_ixqif"]
+[sub_resource type="Resource" id="Resource_bef0u"]
 script = ExtResource("2_mobtw")
 label = "Plasma"
 icon = ExtResource("11_ahgwq")
 unlocked = false
 
-[sub_resource type="Resource" id="Resource_lqc3n"]
+[sub_resource type="Resource" id="Resource_rcuoh"]
 script = ExtResource("2_mobtw")
 label = "Nuke"
 icon = ExtResource("11_afgrn")
 unlocked = false
 
-[sub_resource type="Resource" id="Resource_o2gn8"]
+[sub_resource type="Resource" id="Resource_a1u13"]
 script = ExtResource("2_mobtw")
 label = "Armageddon"
 unlocked = false
 
-[sub_resource type="Resource" id="Resource_oyt6r"]
+[sub_resource type="Resource" id="Resource_irufw"]
 script = ExtResource("2_mobtw")
 label = "Earth"
 icon = ExtResource("2_0p1l8")
 unlocked = false
 
-[sub_resource type="Resource" id="Resource_k8fy8"]
+[sub_resource type="Resource" id="Resource_0vhtn"]
 script = ExtResource("2_mobtw")
 label = "Energy"
 icon = ExtResource("7_rrx8l")
 unlocked = false
 
-[sub_resource type="Resource" id="Resource_vr3sl"]
+[sub_resource type="Resource" id="Resource_qwbix"]
 script = ExtResource("2_mobtw")
 label = "Sulfer"
 unlocked = false
 
-[sub_resource type="Resource" id="Resource_an0g7"]
+[sub_resource type="Resource" id="Resource_kg3g4"]
 script = ExtResource("2_mobtw")
 label = "University"
 unlocked = false
 
-[sub_resource type="Resource" id="Resource_wb82g"]
+[sub_resource type="Resource" id="Resource_xu8ad"]
 script = ExtResource("2_mobtw")
 label = "Library"
 unlocked = false
 
-[sub_resource type="Resource" id="Resource_2xhbo"]
+[sub_resource type="Resource" id="Resource_6vb5c"]
 script = ExtResource("2_mobtw")
 label = "Book"
 icon = ExtResource("10_lsxb0")
 unlocked = false
 
-[sub_resource type="Resource" id="Resource_24f1g"]
+[sub_resource type="Resource" id="Resource_jijfe"]
 script = ExtResource("4_64064")
 items = {
 "Air": {
 "ingredients": [],
-"item": SubResource("Resource_ix5vs")
+"item": SubResource("Resource_hifsh")
 },
 "Armageddon": {
 "ingredients": ["Nuke"],
-"item": SubResource("Resource_o2gn8")
+"item": SubResource("Resource_a1u13")
 },
 "Book": {
 "ingredients": ["Fire", "Ice"],
-"item": SubResource("Resource_2xhbo")
+"item": SubResource("Resource_6vb5c")
 },
 "Diamond": {
 "ingredients": ["Pressure"],
-"item": SubResource("Resource_12l22")
+"item": SubResource("Resource_syqr5")
 },
 "Dust": {
 "ingredients": ["Earth", "Wind"],
-"item": SubResource("Resource_k17ra")
+"item": SubResource("Resource_muw6p")
 },
 "Earth": {
 "ingredients": [],
-"item": SubResource("Resource_oyt6r")
+"item": SubResource("Resource_irufw")
 },
 "Energy": {
 "ingredients": ["Fire", "Wind"],
-"item": SubResource("Resource_k8fy8")
+"item": SubResource("Resource_0vhtn")
 },
 "Fire": {
 "ingredients": [],
-"item": SubResource("Resource_sd57d")
+"item": SubResource("Resource_y3f4f")
 },
 "Gunpowder": {
 "ingredients": ["Sulfer", "Energy"],
-"item": SubResource("Resource_vekgw")
+"item": SubResource("Resource_pwcpp")
 },
 "Heat": {
 "ingredients": ["Fire"],
-"item": SubResource("Resource_3wxta")
+"item": SubResource("Resource_tqra1")
 },
 "Ice": {
 "ingredients": ["Water"],
-"item": SubResource("Resource_6f3ce")
+"item": SubResource("Resource_psbgv")
 },
 "Library": {
 "ingredients": ["Book"],
-"item": SubResource("Resource_wb82g")
+"item": SubResource("Resource_xu8ad")
 },
 "Metal": {
 "ingredients": ["Ore", "Heat"],
-"item": SubResource("Resource_fbah6")
+"item": SubResource("Resource_b3a4t")
 },
 "Nuke": {
 "ingredients": ["Uranium", "TNT", "University", "Metal", "Pressure"],
-"item": SubResource("Resource_lqc3n")
+"item": SubResource("Resource_rcuoh")
 },
 "Ore": {
 "ingredients": ["Earth", "Fire"],
-"item": SubResource("Resource_xi250")
+"item": SubResource("Resource_supo8")
 },
 "Plasma": {
 "ingredients": ["Heat", "Air"],
-"item": SubResource("Resource_ixqif")
+"item": SubResource("Resource_bef0u")
 },
 "Pressure": {
 "ingredients": ["Steam", "Fire"],
-"item": SubResource("Resource_g4iun")
+"item": SubResource("Resource_ogpwy")
 },
 "Reactor": {
 "ingredients": ["Uranium", "Metal"],
-"item": SubResource("Resource_2igqr")
+"item": SubResource("Resource_1ov8u")
 },
 "Rock": {
 "ingredients": ["Earth"],
-"item": SubResource("Resource_xkg4m")
+"item": SubResource("Resource_4thg0")
 },
 "Steam": {
 "ingredients": ["Water", "Fire"],
-"item": SubResource("Resource_1nslt")
+"item": SubResource("Resource_kfkg3")
 },
 "Stone": {
 "ingredients": ["Rock"],
-"item": SubResource("Resource_48iyo")
+"item": SubResource("Resource_rvj8k")
 },
 "Sulfer": {
-"ingredients": ["Earth", "Fire"],
-"item": SubResource("Resource_vr3sl")
+"ingredients": ["Earth", "Rock"],
+"item": SubResource("Resource_qwbix")
 },
 "TNT": {
 "ingredients": ["Pressure", "Gunpowder"],
-"item": SubResource("Resource_7c23l")
+"item": SubResource("Resource_iq285")
 },
 "University": {
 "ingredients": ["Library"],
-"item": SubResource("Resource_an0g7")
+"item": SubResource("Resource_kg3g4")
 },
 "Uranium": {
 "ingredients": ["Energy", "Ore"],
-"item": SubResource("Resource_2o43a")
+"item": SubResource("Resource_6ivwc")
 },
 "Water": {
 "ingredients": [],
-"item": SubResource("Resource_qib1h")
+"item": SubResource("Resource_y5r0i")
 },
 "Wind": {
 "ingredients": ["Air"],
-"item": SubResource("Resource_10a2d")
+"item": SubResource("Resource_ltygj")
 }
 }
 
-[sub_resource type="Resource" id="Resource_xxmyy"]
+[sub_resource type="Resource" id="Resource_a88k3"]
 script = ExtResource("1_4d3bb")
 name = "ItemNode2"
 offset = Vector2(20, 460)
 item_label = "Water"
 item_icon = ExtResource("1_xrp3s")
 
-[sub_resource type="Resource" id="Resource_swq6g"]
+[sub_resource type="Resource" id="Resource_clh8f"]
 script = ExtResource("1_4d3bb")
 name = "ItemNode3"
 offset = Vector2(20, 40)
 item_label = "Fire"
 item_icon = ExtResource("3_5mmvs")
 
-[sub_resource type="Resource" id="Resource_c1f5a"]
+[sub_resource type="Resource" id="Resource_rfgy1"]
 script = ExtResource("1_4d3bb")
 name = "ItemNode"
 offset = Vector2(20, -140)
 item_label = "Air"
 item_icon = ExtResource("4_qj1ql")
 
-[sub_resource type="Resource" id="Resource_3qxgm"]
+[sub_resource type="Resource" id="Resource_n1tq3"]
 script = ExtResource("1_4d3bb")
 name = "ItemNode5"
 offset = Vector2(460, -340)
 item_label = "Wind"
 
-[sub_resource type="Resource" id="Resource_qmvcg"]
+[sub_resource type="Resource" id="Resource_8avnh"]
 script = ExtResource("1_4d3bb")
 name = "ItemNode9"
 offset = Vector2(420, 660)
 item_label = "Ice"
 item_icon = ExtResource("5_e0dvy")
 
-[sub_resource type="Resource" id="Resource_xdbfh"]
+[sub_resource type="Resource" id="Resource_kbvny"]
 script = ExtResource("1_4d3bb")
 name = "ItemNode14"
 offset = Vector2(1120, -160)
 item_label = "Heat"
 
-[sub_resource type="Resource" id="Resource_yipnd"]
+[sub_resource type="Resource" id="Resource_p2lyc"]
 script = ExtResource("1_4d3bb")
 name = "ItemNode13"
 offset = Vector2(1120, 20)
 item_label = "Ore"
 
-[sub_resource type="Resource" id="Resource_py0uv"]
+[sub_resource type="Resource" id="Resource_8l75t"]
 script = ExtResource("1_4d3bb")
 name = "ItemNode6"
 offset = Vector2(1120, 240)
 item_label = "Dust"
 
-[sub_resource type="Resource" id="Resource_rvxk3"]
+[sub_resource type="Resource" id="Resource_dmlre"]
 script = ExtResource("1_4d3bb")
 name = "ItemNode10"
 offset = Vector2(1120, 460)
 item_label = "Steam"
 
-[sub_resource type="Resource" id="Resource_88jii"]
+[sub_resource type="Resource" id="Resource_5f0d8"]
 script = ExtResource("1_4d3bb")
 name = "ItemNode11"
 offset = Vector2(1600, 160)
 item_label = "Pressure"
 item_icon = ExtResource("6_gm7d1")
 
-[sub_resource type="Resource" id="Resource_pitiy"]
+[sub_resource type="Resource" id="Resource_5fiqy"]
 script = ExtResource("1_4d3bb")
 name = "ItemNode12"
 offset = Vector2(2060, 160)
 item_label = "Diamond"
 item_icon = ExtResource("6_8yj85")
 
-[sub_resource type="Resource" id="Resource_xkwa1"]
+[sub_resource type="Resource" id="Resource_5grpn"]
 script = ExtResource("1_4d3bb")
 name = "ItemNode8"
 offset = Vector2(2060, -180)
 item_label = "Uranium"
 
-[sub_resource type="Resource" id="Resource_v1oq5"]
+[sub_resource type="Resource" id="Resource_7eegr"]
 script = ExtResource("1_4d3bb")
 name = "ItemNode15"
 offset = Vector2(2060, 0)
 item_label = "Metal"
 
-[sub_resource type="Resource" id="Resource_7jqse"]
+[sub_resource type="Resource" id="Resource_pxifl"]
 script = ExtResource("1_4d3bb")
 name = "ItemNode16"
 offset = Vector2(2580, -180)
 item_label = "Reactor"
 
-[sub_resource type="Resource" id="Resource_fafe2"]
+[sub_resource type="Resource" id="Resource_o7r8m"]
 script = ExtResource("1_4d3bb")
 name = "ItemNode18"
 offset = Vector2(1580, 660)
 item_label = "Gunpowder"
 
-[sub_resource type="Resource" id="Resource_u2b2d"]
+[sub_resource type="Resource" id="Resource_r3uyx"]
 script = ExtResource("1_4d3bb")
 name = "ItemNode19"
 offset = Vector2(2060, 660)
 item_label = "TNT"
 item_icon = ExtResource("8_t2ido")
 
-[sub_resource type="Resource" id="Resource_fvyer"]
+[sub_resource type="Resource" id="Resource_ymugq"]
 script = ExtResource("1_4d3bb")
 name = "ItemNode22"
 offset = Vector2(420, 340)
 item_label = "Rock"
 item_icon = ExtResource("9_aww2r")
 
-[sub_resource type="Resource" id="Resource_504h4"]
+[sub_resource type="Resource" id="Resource_fp202"]
 script = ExtResource("1_4d3bb")
 name = "ItemNode23"
 offset = Vector2(760, 340)
 item_label = "Stone"
 item_icon = ExtResource("10_154px")
 
-[sub_resource type="Resource" id="Resource_bpte3"]
+[sub_resource type="Resource" id="Resource_qj705"]
 script = ExtResource("1_4d3bb")
 name = "ItemNode21"
 offset = Vector2(1620, -560)
 item_label = "Plasma"
 item_icon = ExtResource("11_ahgwq")
 
-[sub_resource type="Resource" id="Resource_w6wp6"]
+[sub_resource type="Resource" id="Resource_evya5"]
 script = ExtResource("1_4d3bb")
 name = "ItemNode20"
 offset = Vector2(2600, 460)
 item_label = "Nuke"
 item_icon = ExtResource("11_afgrn")
 
-[sub_resource type="Resource" id="Resource_fk430"]
+[sub_resource type="Resource" id="Resource_cis2r"]
 script = ExtResource("1_4d3bb")
 name = "ItemNode27"
 offset = Vector2(3080, 460)
 item_label = "Armageddon"
 
-[sub_resource type="Resource" id="Resource_d2lll"]
+[sub_resource type="Resource" id="Resource_27rms"]
 script = ExtResource("1_4d3bb")
 name = "ItemNode4"
 offset = Vector2(20, 240)
 item_label = "Earth"
 item_icon = ExtResource("2_0p1l8")
 
-[sub_resource type="Resource" id="Resource_qkh56"]
+[sub_resource type="Resource" id="Resource_6ngwd"]
 script = ExtResource("1_4d3bb")
 name = "ItemNode7"
 offset = Vector2(1120, -340)
 item_label = "Energy"
 item_icon = ExtResource("7_rrx8l")
 
-[sub_resource type="Resource" id="Resource_n6t1h"]
+[sub_resource type="Resource" id="Resource_0x5m8"]
 script = ExtResource("1_4d3bb")
 name = "ItemNode17"
 offset = Vector2(1120, 660)
 item_label = "Sulfer"
 
-[sub_resource type="Resource" id="Resource_wsf03"]
+[sub_resource type="Resource" id="Resource_rame1"]
 script = ExtResource("1_4d3bb")
 name = "ItemNode26"
 offset = Vector2(2060, 840)
 item_label = "University"
 
-[sub_resource type="Resource" id="Resource_2i1xv"]
+[sub_resource type="Resource" id="Resource_jc3uw"]
 script = ExtResource("1_4d3bb")
 name = "ItemNode25"
 offset = Vector2(1580, 840)
 item_label = "Library"
 
-[sub_resource type="Resource" id="Resource_x673h"]
+[sub_resource type="Resource" id="Resource_ue0kx"]
 script = ExtResource("1_4d3bb")
 name = "ItemNode24"
 offset = Vector2(1120, 840)
@@ -548,16 +548,6 @@ connections = Array[Dictionary]([{
 "from_node": "ItemNode3",
 "from_port": 0,
 "to_node": "ItemNode11",
-"to_port": 0
-}, {
-"from_node": "ItemNode4",
-"from_port": 0,
-"to_node": "ItemNode17",
-"to_port": 0
-}, {
-"from_node": "ItemNode3",
-"from_port": 0,
-"to_node": "ItemNode17",
 "to_port": 0
 }, {
 "from_node": "ItemNode17",
@@ -659,6 +649,16 @@ connections = Array[Dictionary]([{
 "from_port": 0,
 "to_node": "ItemNode10",
 "to_port": 0
+}, {
+"from_node": "ItemNode4",
+"from_port": 0,
+"to_node": "ItemNode17",
+"to_port": 0
+}, {
+"from_node": "ItemNode22",
+"from_port": 0,
+"to_node": "ItemNode17",
+"to_port": 0
 }])
-nodes = Array[ExtResource("1_4d3bb")]([SubResource("Resource_xxmyy"), SubResource("Resource_swq6g"), SubResource("Resource_c1f5a"), SubResource("Resource_3qxgm"), SubResource("Resource_qmvcg"), SubResource("Resource_xdbfh"), SubResource("Resource_yipnd"), SubResource("Resource_py0uv"), SubResource("Resource_rvxk3"), SubResource("Resource_88jii"), SubResource("Resource_pitiy"), SubResource("Resource_xkwa1"), SubResource("Resource_v1oq5"), SubResource("Resource_7jqse"), SubResource("Resource_fafe2"), SubResource("Resource_u2b2d"), SubResource("Resource_fvyer"), SubResource("Resource_504h4"), SubResource("Resource_bpte3"), SubResource("Resource_w6wp6"), SubResource("Resource_fk430"), SubResource("Resource_d2lll"), SubResource("Resource_qkh56"), SubResource("Resource_n6t1h"), SubResource("Resource_wsf03"), SubResource("Resource_2i1xv"), SubResource("Resource_x673h")])
-crafting_catalog = SubResource("Resource_24f1g")
+nodes = Array[ExtResource("1_4d3bb")]([SubResource("Resource_a88k3"), SubResource("Resource_clh8f"), SubResource("Resource_rfgy1"), SubResource("Resource_n1tq3"), SubResource("Resource_8avnh"), SubResource("Resource_kbvny"), SubResource("Resource_p2lyc"), SubResource("Resource_8l75t"), SubResource("Resource_dmlre"), SubResource("Resource_5f0d8"), SubResource("Resource_5fiqy"), SubResource("Resource_5grpn"), SubResource("Resource_7eegr"), SubResource("Resource_pxifl"), SubResource("Resource_o7r8m"), SubResource("Resource_r3uyx"), SubResource("Resource_ymugq"), SubResource("Resource_fp202"), SubResource("Resource_qj705"), SubResource("Resource_evya5"), SubResource("Resource_cis2r"), SubResource("Resource_27rms"), SubResource("Resource_6ngwd"), SubResource("Resource_0x5m8"), SubResource("Resource_rame1"), SubResource("Resource_jc3uw"), SubResource("Resource_ue0kx")])
+crafting_catalog = SubResource("Resource_jijfe")
