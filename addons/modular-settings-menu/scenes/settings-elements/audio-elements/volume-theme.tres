@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dra6kiu83if8t"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_hlot4"]
+size = Vector2(0, 0)
+
+[resource]
+SpinBox/icons/updown = SubResource("PlaceholderTexture2D_hlot4")

@@ -20,12 +20,14 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+GameManager="*res://cheatcodes/CheatObserver.gd"
+SettingsDataManager="*res://addons/modular-settings-menu/singletons/settings_data_manager.gd"
 CatalogManager="*res://library/catalog_manager.gd"
 ToastParty="*res://addons/toastparty/toast-autoload.gd"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/plugin_refresher/plugin.cfg", "res://addons/recipebuilder/plugin.cfg", "res://addons/toastparty/plugin.cfg")
+enabled=PackedStringArray("res://addons/modular-settings-menu/plugin.cfg", "res://addons/plugin_refresher/plugin.cfg", "res://addons/recipebuilder/plugin.cfg", "res://addons/toastparty/plugin.cfg")
 
 [gui]
 

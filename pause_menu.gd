@@ -3,22 +3,32 @@ extends Control
 signal pause_state_changed(paused: bool)
 
 @onready var TransitionManager := $TransitionManager
+@onready var SettingsScene := $SettingsScene
 
+@onready var view_holder := $VBoxContainer
 @onready var ResumeBtn := $VBoxContainer/ResumeBtn
+@onready var SettingsBtn := $VBoxContainer/SettingsBtn
 @onready var ExitBtn := $VBoxContainer/ExitButton
 
 func _ready() -> void:
 	TransitionManager.fade_in()
 	
 	ResumeBtn.pressed.connect(_on_resume_pressed)
-	ExitBtn.pressed.connect(_on_exit_pressed)
 	
+	ExitBtn.pressed.connect(_on_exit_pressed)
 	ExitBtn.visible = OS.get_name() != "Web"
+	
+	SettingsBtn.pressed.connect(_on_settings_pressed)
+	SettingsScene.MenuPanelRef = view_holder
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_pause"):
 		_pause_or_unpause()
 
+func _on_settings_pressed() -> void:
+	view_holder.hide()
+	SettingsScene.show()
+	
 func _on_resume_pressed() -> void:
 	_pause_or_unpause()
 

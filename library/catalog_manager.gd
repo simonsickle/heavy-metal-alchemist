@@ -84,5 +84,15 @@ func check_recipe(ingredients: Array[String]) -> bool:
 	
 	return false
 
+func unlock_item(name: String):
+	var new_item := _catalog.unlock_item(name)
+	
+	if new_item:
+		_game_save.unlocked_items[name] = {
+			unlocked_at = Time.get_time_string_from_system(),
+		}
+		_save_game()
+		new_item_unlocked.emit(new_item)
+
 func progress_label() -> String:
 	return "%s of %s unlocked" % [items.size(), _catalog.items.size()]

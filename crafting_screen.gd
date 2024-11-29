@@ -28,6 +28,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	combine_button.visible = first_item.item and second_item.item
 	
+	progress_label.text = CatalogManager.progress_label()
+	
 	if not audio_player.stream_paused:
 		music_toggle.texture_normal = load("res://art/ui/volume_on.svg")
 	else:
@@ -43,6 +45,16 @@ func _on_music_toggled() -> void:
 
 func _on_new_item_unlocked(item: CraftingItemResource) -> void:
 	progress_label.text = CatalogManager.progress_label()
+	
+	if item.label == "T-Shirt":
+		ToastParty.show({
+			"text": "I entered the Konami code and all I got was this T-Shirt!",
+			"bgcolor": Color(0, 0, 0, 0.6),
+			"color": Color(1, 1, 1, 1),
+			"gravity": "bottom",
+			"direction": "center",
+		})
+		return
 	
 	ToastParty.show({
 		"text": "%s Unlocked!" % item.label,

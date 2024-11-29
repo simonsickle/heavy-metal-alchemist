@@ -2,14 +2,18 @@ extends Resource
 
 class_name CraftingCatalog
 
+@export var DefaultItems: Array[String] = ["Air", "Fire", "Water", "Dirt"]
 @export var items: Dictionary = {}
 
 func get_unlocked_items() -> Array[CraftingItemResource]:
 	var crafting_items: Array[CraftingItemResource] = []
 	for entry_key in items.keys():
 		var entry = items[entry_key]
-		if entry.item.unlocked or entry.ingredients.size() == 0:
+		if entry.item.unlocked or DefaultItems.find(entry.item.label) != -1:
+			print("item in array: ", entry.item.label)
 			crafting_items.append(entry.item)
+		else:
+			print("item not array: ", entry.item.label)
 	return crafting_items
 
 
@@ -45,6 +49,8 @@ func add_ingredient(item_name: String, ingredient_name: String) -> void:
 	items[item_name].ingredients.append(ingredient_name)
 
 func unlock_item(item_name: String) -> CraftingItemResource:
+	if not items.has(item_name): return null
+	
 	var item = items[item_name].item
 	item.unlocked = true
 	return item
