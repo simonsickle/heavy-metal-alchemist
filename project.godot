@@ -25,6 +25,11 @@ SettingsDataManager="*res://addons/modular-settings-menu/singletons/settings_dat
 CatalogManager="*res://library/catalog_manager.gd"
 ToastParty="*res://addons/toastparty/toast-autoload.gd"
 
+[display]
+
+window/size/viewport_width=960
+window/size/viewport_height=540
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/modular-settings-menu/plugin.cfg", "res://addons/plugin_refresher/plugin.cfg", "res://addons/toastparty/plugin.cfg")
