@@ -1,10 +1,10 @@
-extends Panel
+extends Control
 class_name ItemSlotUi
 
 @export var item: CraftingItemResource = null
 
-@onready var icon_image := $VBoxContainer/Background/Icon
-@onready var label := $VBoxContainer/Label
+@onready var icon_image := $Background/Icon
+@onready var label := $Label
 
 var ItemDragPreview = preload("res://library/item_drag_preview.tscn")
 var ShimmerMaterial = preload("res://shaders/shimmer.material")

@@ -1,0 +1,77 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlm3nxt0rc786"]
+
+[ext_resource type="Script" path="res://ui/craft/PentagramInput.gd" id="1_jpakp"]
+[ext_resource type="PackedScene" uid="uid://df1n5i3s3qsjp" path="res://ui/craft/PentagramDropLocation.tscn" id="2_forcp"]
+[ext_resource type="Texture2D" uid="uid://cwqwptudkdf36" path="res://art/crafting/Pent01100001gram.png" id="2_qk8mi"]
+
+[node name="PentagramInput" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -551.0
+offset_bottom = -47.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+script = ExtResource("1_jpakp")
+drop_point_offsets = Array[Vector2]([Vector2(0.738, 0.09), Vector2(0.878, 0.532), Vector2(0.452, 0.87), Vector2(0.024, 0.538), Vector2(0.16, 0.094), Vector2(0.452, 0.424)])
+
+[node name="BackgroundImg" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("2_qk8mi")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="DropPoint1" parent="." instance=ExtResource("2_forcp")]
+layout_mode = 0
+offset_left = 443.538
+offset_top = 54.09
+offset_right = 507.538
+offset_bottom = 118.09
+scale = Vector2(0.902402, 0.902402)
+
+[node name="DropPoint2" parent="." instance=ExtResource("2_forcp")]
+layout_mode = 0
+offset_left = 527.678
+offset_top = 319.732
+offset_right = 591.678
+offset_bottom = 383.732
+scale = Vector2(0.902402, 0.902402)
+
+[node name="DropPoint3" parent="." instance=ExtResource("2_forcp")]
+layout_mode = 0
+offset_left = 271.652
+offset_top = 522.87
+offset_right = 335.652
+offset_bottom = 586.87
+scale = Vector2(0.902402, 0.902402)
+
+[node name="DropPoint4" parent="." instance=ExtResource("2_forcp")]
+layout_mode = 0
+offset_left = 14.424
+offset_top = 323.338
+offset_right = 78.424
+offset_bottom = 387.338
+scale = Vector2(0.902402, 0.902402)
+
+[node name="DropPoint5" parent="." instance=ExtResource("2_forcp")]
+layout_mode = 0
+offset_left = 96.16
+offset_top = 56.494
+offset_right = 160.16
+offset_bottom = 120.494
+scale = Vector2(0.902402, 0.902402)
+
+[node name="CenterPoint" parent="." instance=ExtResource("2_forcp")]
+layout_mode = 0
+offset_left = 271.652
+offset_top = 254.824
+offset_right = 335.652
+offset_bottom = 318.824
+scale = Vector2(0.902402, 0.902402)
+drop_item_allowed = false

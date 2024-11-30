@@ -1,14 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://ohf61dvgfgl3"]
+[gd_scene load_steps=9 format=3 uid="uid://ohf61dvgfgl3"]
 
 [ext_resource type="Script" path="res://crafting_screen.gd" id="1_rwenr"]
 [ext_resource type="PackedScene" uid="uid://pt2qtqluawnl" path="res://library/catalog_ui.tscn" id="1_wnuwp"]
-[ext_resource type="Texture2D" uid="uid://dww44d3tx331m" path="res://art/ui/crafting-scene-bg.png" id="2_6u4ex"]
+[ext_resource type="Texture2D" uid="uid://gh7ur1kbqrp7" path="res://art/ui/crafting-scene-bg-2.png" id="3_64ven"]
 [ext_resource type="FontFile" uid="uid://c1vwfyoxivvfi" path="res://art/joystix monospace.otf" id="3_dyh8x"]
-[ext_resource type="PackedScene" uid="uid://cdjexm7hf6367" path="res://library/item_input_slot.tscn" id="4_0u4km"]
 [ext_resource type="AudioStream" uid="uid://7i8u2gabj080" path="res://audio/TheShadowRealm.mp3" id="5_6nlcy"]
-[ext_resource type="Texture2D" uid="uid://d1iasgals5hbu" path="res://art/ui/volume_on.svg" id="6_3f4n5"]
 [ext_resource type="PackedScene" uid="uid://b8k2a8iadvhan" path="res://transition/TransitionManager.tscn" id="8_0v7mc"]
 [ext_resource type="PackedScene" uid="uid://bo07h75c5e1um" path="res://ui/pause/PauseMenu.tscn" id="9_cpibr"]
+[ext_resource type="PackedScene" uid="uid://dlm3nxt0rc786" path="res://ui/craft/PentagramInput.tscn" id="10_gvnfu"]
 
 [node name="CraftingScreen" type="Control"]
 layout_mode = 3
@@ -17,8 +16,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1, 0.989597)
 script = ExtResource("1_rwenr")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_6nlcy")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
 
 [node name="BackgroundTexture" type="TextureRect" parent="."]
 layout_mode = 1
@@ -27,52 +31,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_6u4ex")
+texture = ExtResource("3_64ven")
 expand_mode = 5
 stretch_mode = 5
 
 [node name="Catalog" parent="." instance=ExtResource("1_wnuwp")]
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -458.0
-offset_top = -323.5
-offset_right = 0.0
-offset_bottom = 323.5
+anchor_left = 0.65
+anchor_right = 0.95
 grow_horizontal = 0
 grow_vertical = 2
-
-[node name="CombineButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 273.0
-offset_top = 337.0
-offset_right = 374.0
-offset_bottom = 365.0
-theme_override_fonts/font = ExtResource("3_dyh8x")
-text = "Combine"
-
-[node name="FirstItem" parent="." instance=ExtResource("4_0u4km")]
-layout_mode = 0
-anchors_preset = 0
-offset_left = 225.0
-offset_top = 225.0
-offset_right = 289.0
-offset_bottom = 302.0
-grow_horizontal = 1
-grow_vertical = 1
-
-[node name="SecondItem" parent="." instance=ExtResource("4_0u4km")]
-layout_mode = 0
-anchors_preset = 0
-offset_left = 353.0
-offset_top = 225.0
-offset_right = 417.0
-offset_bottom = 302.0
-grow_horizontal = 1
-grow_vertical = 1
 
 [node name="ProgressLabel" type="Label" parent="."]
 layout_mode = 1
@@ -82,32 +50,25 @@ offset_right = 215.0
 offset_bottom = 39.0
 theme_override_fonts/font = ExtResource("3_dyh8x")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_6nlcy")
-autoplay = true
-bus = &"Music"
-parameters/looping = true
-
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="PentagramInput" parent="." instance=ExtResource("10_gvnfu")]
 layout_mode = 1
-offset_left = 16.0
-offset_top = 55.0
-offset_right = 259.0
-offset_bottom = 79.0
-theme_override_constants/separation = 8
+anchors_preset = -1
+grow_horizontal = 1
+size_flags_horizontal = 1
+size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="HBoxContainer"]
-custom_minimum_size = Vector2(24, 0)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_dyh8x")
-text = "Background Music"
-
-[node name="MusicToggle" type="TextureButton" parent="HBoxContainer"]
-custom_minimum_size = Vector2(24, 24)
-layout_mode = 2
-size_flags_vertical = 4
-texture_normal = ExtResource("6_3f4n5")
-stretch_mode = 0
+[node name="CombineButton" type="Button" parent="."]
+custom_minimum_size = Vector2(128, 64)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.12
+anchor_top = 0.88
+anchor_right = 0.4
+anchor_bottom = 0.95
+offset_bottom = 18.64
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Begin Ritual"
 
 [node name="TransitionManager" parent="." instance=ExtResource("8_0v7mc")]
 layout_mode = 1

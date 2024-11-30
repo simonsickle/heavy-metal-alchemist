@@ -5,7 +5,7 @@ resource_name = "resolution"
 script/source = "extends OptionElement
 
 ## Toggle window resizing by the user.
-@export var RESIZABLE: bool = false
+@export var RESIZABLE: bool = true
 
 
 func _init() -> void:
@@ -48,8 +48,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = SubResource("GDScript_utf5l")
 DEFAULT_VALUE = "1920x1080"
-IDENTIFIER = "Resolution"
 OptionsRef = NodePath("Options")
+IDENTIFIER = "Resolution"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 2

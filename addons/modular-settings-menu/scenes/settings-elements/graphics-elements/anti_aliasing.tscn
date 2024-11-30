@@ -66,8 +66,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = SubResource("GDScript_5w56l")
 DEFAULT_VALUE = "Disabled"
-IDENTIFIER = "AntiAliasing"
 OptionsRef = NodePath("Options")
+IDENTIFIER = "AntiAliasing"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 2

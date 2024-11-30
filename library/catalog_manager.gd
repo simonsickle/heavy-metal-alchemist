@@ -70,7 +70,7 @@ func _save_game() -> void:
 		printerr("Error Saving: ", err)
 
 
-func check_recipe(ingredients: Array[String]) -> bool:
+func check_recipe(ingredients: Array[String]) -> CraftingItemResource:
 	var unlocked = _catalog.check_recipe_and_unlock(ingredients)
 	
 	if unlocked:
@@ -80,9 +80,9 @@ func check_recipe(ingredients: Array[String]) -> bool:
 		}
 		_save_game()
 		new_item_unlocked.emit(unlocked)
-		return true
+		return unlocked
 	
-	return false
+	return null
 
 func unlock_item(name: String):
 	var new_item := _catalog.unlock_item(name)

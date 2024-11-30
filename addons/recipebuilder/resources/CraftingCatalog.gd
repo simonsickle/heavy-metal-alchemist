@@ -10,10 +10,7 @@ func get_unlocked_items() -> Array[CraftingItemResource]:
 	for entry_key in items.keys():
 		var entry = items[entry_key]
 		if entry.item.unlocked or DefaultItems.find(entry.item.label) != -1:
-			print("item in array: ", entry.item.label)
 			crafting_items.append(entry.item)
-		else:
-			print("item not array: ", entry.item.label)
 	return crafting_items
 
 

@@ -1,7 +1,7 @@
 extends Control
 
 @export var bg_color : Color = Color.BLACK
-@export var to_scene : PackedScene = preload("res://title_screen.tscn")
+@export var to_scene : PackedScene = preload("res://ui/title/TitleScreen.tscn")
 @export var title_color := Color.BLUE_VIOLET
 @export var text_color := Color.WHITE
 @export var title_font : FontFile = null

@@ -27,7 +27,7 @@ ToastParty="*res://addons/toastparty/toast-autoload.gd"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/modular-settings-menu/plugin.cfg", "res://addons/plugin_refresher/plugin.cfg", "res://addons/recipebuilder/plugin.cfg", "res://addons/toastparty/plugin.cfg")
+enabled=PackedStringArray("res://addons/modular-settings-menu/plugin.cfg", "res://addons/plugin_refresher/plugin.cfg", "res://addons/toastparty/plugin.cfg")
 
 [gui]
 
@@ -41,10 +41,16 @@ ui_pause={
 ]
 }
 
+[internationalization]
+
+locale/locale_filter_mode=0
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
 textures/vram_compression/import_etc2_astc=true
+textures/default_filters/anisotropic_filtering_level=4
+textures/decals/filter=0
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)
 anti_aliasing/quality/msaa_2d=3
 anti_aliasing/quality/msaa_3d=3

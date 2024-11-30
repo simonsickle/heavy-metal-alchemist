@@ -2,12 +2,12 @@ extends Control
 
 @onready var transition_manager := $TransitionManager
 
-@onready var catalog := $Catalog
-@onready var first_item := $FirstItem
-@onready var second_item := $SecondItem
+@onready var pentagram_input := $PentagramInput
 @onready var combine_button := $CombineButton
+
+@onready var catalog := $Catalog
+
 @onready var progress_label := $ProgressLabel
-@onready var music_toggle := $HBoxContainer/MusicToggle
 @onready var audio_player := $AudioStreamPlayer
 @onready var pause_menu := $PauseMenu
 
@@ -20,21 +20,13 @@ func _ready() -> void:
 	
 	CatalogManager.new_item_unlocked.connect(_on_new_item_unlocked)
 	
-	music_toggle.pressed.connect(_on_music_toggled)
-	
 	pause_menu.pause_state_changed.connect(_on_pause_state_changed)
 
 
 func _process(delta: float) -> void:
-	combine_button.visible = first_item.item and second_item.item
-	
+	combine_button.visible = pentagram_input.has_item_inputs()
 	progress_label.text = CatalogManager.progress_label()
 	
-	if not audio_player.stream_paused:
-		music_toggle.texture_normal = load("res://art/ui/volume_on.svg")
-	else:
-		music_toggle.texture_normal = load("res://art/ui/volume_off.svg")
-
 func _on_pause_state_changed(paused: bool) -> void:
 	if not paused:
 		transition_manager.fade_in()
@@ -66,17 +58,4 @@ func _on_new_item_unlocked(item: CraftingItemResource) -> void:
 
 
 func  _do_combine() -> void:
-	var unlocked = CatalogManager.check_recipe([first_item.item.label, second_item.item.label])
-	
-	if not unlocked:
-		ToastParty.show({
-			"text": "Hmm... That didn't work.",
-			"bgcolor": Color(0, 0, 0, 0.6),
-			"color": Color(1, 1, 1, 1),
-			"gravity": "bottom",
-			"direction": "center",
-		})
-	
-	## Reset the entries
-	first_item.item = null
-	second_item.item = null
+	pentagram_input.begin_ritual()
