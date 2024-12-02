@@ -10,9 +10,7 @@ script/source = "extends OptionElement
 
 func _init() -> void:
 	if OS.get_name() == \"Web\":
-		OPTION_LIST_ = {
-			\"960x540\": Vector2i(960, 540)
-		}
+		OPTION_LIST_ = {}
 	else:
 		OPTION_LIST_ = {
 			\"3840x2160\": Vector2i(3840, 2160),
@@ -33,6 +31,9 @@ func _ready() -> void:
 
 
 func _apply_settings() -> void:
+	if OS.get_name() == \"Web\":
+		return
+	
 	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN:
 		return
 	
